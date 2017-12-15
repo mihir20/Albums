@@ -1,7 +1,8 @@
 import React, { Component } from 'react';
-import { View, Text } from 'react-native';
+import { View } from 'react-native';
 //lib for http request
 import axios from 'axios';
+import AlbumDetail from './AlbumDetail';
 
 
 class AlbumList extends Component {
@@ -15,7 +16,10 @@ class AlbumList extends Component {
     .then(response => this.setState({ albums: response.data }));
   }
 renderAlbums() {
-  return this.state.albums.map(albums => <Text key={albums.title}>{albums.title}</Text>);
+  return this.state.albums.map(albums => <AlbumDetail
+key={albums.title}
+    album={albums}
+  />);
   }
   //this method is called each time the list render
 render() {
