@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { View } from 'react-native';
+import { ScrollView } from 'react-native';
 //lib for http request
 import axios from 'axios';
 import AlbumDetail from './AlbumDetail';
@@ -24,9 +24,9 @@ key={albums.title}
   //this method is called each time the list render
 render() {
  return (
-   <View>
+   <ScrollView>
     {this.renderAlbums()}
-    </View>
+    </ScrollView>
   );
 }
 }
