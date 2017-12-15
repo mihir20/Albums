@@ -1,5 +1,5 @@
 import React from 'react';
-import { View, Text, Image } from 'react-native';
+import { View, Text, Image, Linking } from 'react-native';
 import Card from './Card';
 import CardItem from './CardItem';
 import Button from './Button';
@@ -7,11 +7,12 @@ import Button from './Button';
 const AlbumDetail = ({ album }) => {
    //
   //destructuring objects
-const { title, artist, thumbnail_image, image } = album;
+const { title, artist, thumbnail_image, image, url } = album;
 const { infoTextStyle, infoFont, thumbnailStyle, thumbnailContainerStyle, imageStyle } = styles;
 
 
  return (<Card >
+
      <CardItem>
      <View style={thumbnailContainerStyle}>
 <Image
@@ -28,15 +29,20 @@ source={{ uri: thumbnail_image }}
       </Text>
       </View>
      </CardItem>
+
      <CardItem>
      <Image
       style={imageStyle}
       source={{ uri: image }}
      />
      </CardItem>
+
      <CardItem>
-       <Button />
+       <Button onPress={console.log('button is clicked')} >
+       Buy Now
+       </Button>
      </CardItem>
+
     </Card>
   );
 };
