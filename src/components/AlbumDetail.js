@@ -38,7 +38,9 @@ source={{ uri: thumbnail_image }}
      </CardItem>
 
      <CardItem>
-       <Button onPress={console.log('button is clicked')} >
+       <Button
+onPress={() => Linking.openURL(url)} //Linking is lib used to open url
+       >
        Buy Now
        </Button>
      </CardItem>
