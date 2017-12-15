@@ -3,6 +3,7 @@ import { AppRegistry, View } from 'react-native';
 import Header from './src/components/Header';
 import AlbumList from './src/components/AlbumList';
 
+
 const app = () => (
   <View>
     <Header headerText={'Albums'} />
